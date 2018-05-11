@@ -8,7 +8,9 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 
 SECRET_KEY = 'yj_fhwf$-8ws1%a_vl5c0lf($#ke@c3+lu3l-f733k(j-!q*57'
 DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1",
+                 #todo: remove
+                 "188.166.99.100"]
 
 
 THREADING = True
@@ -76,9 +78,18 @@ WSGI_APPLICATION = 'visartm.wsgi.application'
 
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': 'visartm.sqlite',
+    # },
+    # todo: remove
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'visartm.sqlite',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']

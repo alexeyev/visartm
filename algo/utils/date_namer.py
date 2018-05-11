@@ -12,7 +12,7 @@ class DateNamer:
         elif group_by == "year":
             self.gb = 0
         else:
-            raise ValueError("Cannot group by " + grop_by)
+            raise ValueError("Cannot group by " + group_by)
 
         if lang == "english":
             self.monthes = [
